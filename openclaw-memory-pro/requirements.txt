@@ -1,0 +1,10 @@
+# OpenClaw-Memory-Pro 依赖
+# Python 3.9+
+
+# 核心依赖
+pathlib>=1.0.0
+json>=1.0.0
+
+# 可选依赖
+# requests>=2.28.0  # API 功能
+# fastapi>=0.100.0  # REST API 功能
