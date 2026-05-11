@@ -1,0 +1,8 @@
+{
+  "name": "semantic-release",
+  "branches": ["main"],
+  "plugins": ["@semantic-release/commit-analyzer", "@semantic-release/release-notes-generator", "@semantic-release/github"],
+  "github": {
+    "assets": ["dist/*.tar.gz", "dist/*.whl"]
+  }
+}
