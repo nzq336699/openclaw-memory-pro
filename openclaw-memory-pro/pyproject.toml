@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openclaw-memory-pro"
+version = "0.1.0"
+description = "🦞 OpenClaw-Memory-Pro: 基于记忆宫殿的 AI 记忆增强系统"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "OpenClaw Team", email = "openclaw@example.com"}
+]
+keywords = ["memory", "ai", "openclaw", "memory-palace", "database"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+dependencies = [
+    "pathlib>=1.0.0",
+    "json>=1.0.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/nzq336699/openclaw-memory-pro"
+"Bug Tracker" = "https://github.com/nzq336699/openclaw-memory-pro/issues"
+"Funding" = "https://afdian.net/a/openclaw336699"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["claw_memory*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
