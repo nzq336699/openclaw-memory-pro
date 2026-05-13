@@ -99,6 +99,24 @@ claw-memory export work:notes
 ## 📖 完整文档
 
 - [🚀 快速入门](docs/quick-start.md) - 5 分钟上手
+- [📚 API 文档](docs/api.md) - 完整 API 参考
+- [🛠️ 开发指南](docs/developer.md) - 开发者指南
+
+### ⭐ 立即 Star!
+
+如果这个项目对你有帮助，请花 1 秒钟 Star 一下！这对我至关重要！
+
+🔗 https://github.com/nzq336699/openclaw-memory-pro
+
+### 🎯 10000+ Stars 计划
+
+我们的目标：**10000+ GitHub Stars**!
+
+- ⭐ 已 Star：感谢支持！
+- 💬 有问题？提 Issue！
+- 🐛 发现 Bug？欢迎报告！
+- 💡 有想法？提 Feature Request！
+- 💝 喜欢项目？支持爱发电赞助！
 - [🗂️ 记忆抽屉使用](docs/memory-drawer.md) - 抽屉管理
 - [🔍 记忆检索优化](docs/memory-recall.md) - 高级检索
 - [📚 API 文档](docs/api.md) - 完整 API 参考
