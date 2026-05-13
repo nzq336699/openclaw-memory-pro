@@ -1,0 +1,69 @@
+# 🦞 OpenClaw Blog Configuration
+
+title: "OpenClaw Blog"
+description: "🦞 Your Personal AI Assistant — The Lobster Way! Local-first multi-channel AI assistant with voice wake, live canvas, and multi-agent routing."
+baseurl: "/openclaw-memory-pro/"
+url: "https://nzq336699.github.io"
+
+# SEO
+search:
+  engine: "google"
+  per_page: 20
+  last_updated: 2026-05-12
+  keywords: "OpenClaw, AI, OpenSource, LocalFirst, Privacy, PersonalAssistant, MultiChannel, macOS, Linux, Android"
+  author: "OpenClaw Team"
+  language: "zh-CN, en"
+
+# Social Media
+social:
+  twitter: "nzq336699"
+  github: "nzq336699/openclaw"
+  discord: "https://discord.gg/clawd"
+  email: "eeton750903@outlook.com"
+
+# Analytics
+analytics:
+  google: ""
+  plausible: ""
+
+# Blog Settings
+categories:
+  - AI
+  - OpenSource
+  - LocalFirst
+  - Privacy
+  - MultiChannel
+  - macOS
+  - Linux
+  - Android
+
+tags:
+  - OpenClaw
+  - AI
+  - Local-first
+  - Privacy
+  - Multi-channel
+  - Personal-Assistant
+  - Open-Source
+  - macOS
+  - Linux
+  - Android
+
+# Theme
+theme: jekyll-theme-minimal
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+# About
+about: "🦞 Your Personal AI Assistant — The Lobster Way!"
