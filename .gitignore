@@ -1,0 +1,68 @@
+# 🦞 OpenClaw Memory-Pro - 安全忽略规则
+# 保护主人隐私！不公开敏感文件！
+
+# 记忆文件（敏感！不公开）
+MEMORY.md
+IDENTITY.md
+AGENTS.md
+SOUL.md
+USER.md
+TOOLS.md
+
+# 内部日志（不公开）
+PUBLISH-*.md
+ACTIVATION-*.md
+PROMO-*.md
+RELEASE-*.txt
+PUBLISHING-*.md
+IMMEDIATE-*.md
+
+# 内部计划和策略（不公开）
+10k-stars-plan.md
+PUBLISH-*.md
+PROMO-*.md
+RELEASE-*.txt
+STRATEGY-*.md
+
+# 执行日志（不公开）
+*.log
+promo-executing.log
+
+# 临时文件
+tmp/*
+*.tmp
+*.temp
+
+# 配置文件（可能包含敏感信息）
+*.json.bak
+*.json.last-good
+
+# 执行批准（敏感）
+exec-approvals.json
+
+# OpenClaw 内部目录（可选忽略）
+# .openclaw/
+# agents/
+# audit/
+# completions/
+# devices/
+# flows/
+# identity/
+# logs/
+# memory/
+# plugins/
+# service-env/
+# tasks/
+# tmp/
+# tui/
+
+# 注意：以下目录应该被提交到 GitHub
+# blog/
+# claw-academy/
+# claw-flow/
+# claw-mind/
+# claw-studio/
+# docs/
+# openclaw/
+# openclaw-30min-guide/
+# openclaw-memory-pro/
