@@ -1,297 +1,491 @@
-# OpenClaw-Memory-Pro 🦞🔥
+# 🦞 OpenClaw-Memory-Pro
 
-> 🔥 **核弹级 AI 记忆系统** - 让 AI 拥有永久记忆的空间！
-> 
-> ⭐ **目标：10000+ GitHub Stars!** ⭐
-> 💎 **开源免费 + 爱发电赞助** - 双轨制持续发展
+基于记忆宫殿的 AI 记忆增强系统 - 开源 + 爱发电双轨制
 
-[![GitHub Stars Goal](https://img.shields.io/badge/Stars%20Goal-10000+-gold.svg)](#)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
-[![爱发电赞助](https://img.shields.io/badge/爱发电-支持-red.svg)](https://afdian.net/a/openclaw336699)
-[![Documentation](https://img.shields.io/badge/docs-available-green.svg)](docs/quick-start.md)
-[![Featured Project](https://img.shields.io/badge/featured-True-orange.svg)](#)
+[![PyPI](https://img.shields.io/pypi/v/openclaw-memory-pro)](https://pypi.org/project/openclaw-memory-pro/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/nzq336699/openclaw-memory-pro?style=social)](https://github.com/nzq336699/openclaw-memory-pro)
+[![爱发电](https://img.shields.io/badge/爱发电-赞助-orange)](https://afdian.net/a/openclaw336699)
 
-## 🚀 核弹级特性
+## ⚡️ 核心特性
 
-### ✨ 革命性功能
+- ✨ **永久记忆** - AI 不再遗忘重要信息
+- 🏰 **记忆宫殿架构** - 高效的记忆组织与检索
+- ⚡️ **毫秒级检索** - 超快的记忆查询速度
+- 🔒 **本地优先** - 数据存储在本地，安全可靠
+- 💎 **开源免费** - 欢迎 Star 支持！
+- 🎯 **结构化记忆** - 支持多维度记忆分类
 
-- 🧠 **记忆宫殿架构** - 基于人类记忆宫殿原理的 AI 记忆系统
-- 💾 **永久记忆存储** - 再也不怕忘记重要信息
-- 🔍 **智能检索优化** - 精准快速查找，毫秒级响应
-- 📦 **记忆抽屉系统** - 模块化设计，灵活配置
-- 🚀 **零依赖安装** - pip install 即可使用
-- 🎯 **企业级应用** - 支持大规模部署
-- 🔧 **高度可定制** - 满足各种个性化需求
-- ⚡ **高性能优化** - 经过性能测试和优化
+## 🎯 应用场景
 
-### 📊 性能表现
+### 个人 AI 助手
+- 记住你的偏好设置
+- 跟踪你的学习进度
+- 管理你的项目文档
+- 记录你的日常反思
+- 保存重要的对话内容
 
-- ✅ 支持百万级记忆条目
-- ✅ 毫秒级检索速度
-- ✅ 跨平台兼容（macOS/Linux/Windows）
-- ✅ 低内存占用
+### 团队协作
+- 团队知识库
+- 会议纪要管理
+- 项目进度追踪
+- 成员能力档案
 
-## 🌟 为什么选择 OpenClaw-Memory-Pro？
-
-### 🎯 痛点解决
-
-1. **AI 总是忘记** - 你的 AI 助手会记住所有重要信息
-2. **信息分散** - 统一记忆空间，集中管理
-3. **检索困难** - 智能搜索，快速找到所需信息
-4. **学习成本高** - 简单易用，5 分钟上手
-
-### 💎 独特优势
-
-- ✅ **记忆宫殿架构** - 基于人类记忆原理设计
-- ✅ **开源免费** - MIT 协议，完全开源
-- ✅ **爱发电赞助** - 支持持续开发
-- ✅ **活跃社区** - 加入我们的社区共同成长
-- ✅ **企业支持** - 提供企业级定制服务
+### 企业级应用
+- 客服对话记忆
+- 销售线索管理
+- 客户偏好记录
+- 产品培训材料
 
 ## 🚀 快速开始
 
-### 3 分钟安装
+### 安装
 
 ```bash
-# 安装
+# 使用 pip
 pip install openclaw-memory-pro
 
-# 初始化
-claw-memory init
-
-# 创建记忆宫殿
-claw-memory create --wing "work" --room "main" --drawer "notes"
+# 或使用 requirements.txt
+pip install -r requirements.txt
 ```
 
-### 立即使用
+### 初始化
+
+```bash
+# 初始化记忆数据库
+python -m claw_memory.init
+
+# 或从 home 目录初始化
+from claw_memory import MemoryDB
+db = MemoryDB.from_home_dir()
+```
+
+### 基本使用
 
 ```python
 from claw_memory import MemoryDB
 
-# 初始化
+# 1. 初始化记忆数据库
 db = MemoryDB.from_home_dir()
 
-# 添加记忆
-db.add("work:notes", "今天学习了 OpenClaw-Memory-Pro")
+# 2. 创建记忆抽屉（Memory Palace）
+wing = "work"      # 记忆宫殿的翼
+room = "main"      # 记忆宫殿的房间
+drawer = "notes"   # 抽屉名称
 
-# 检索记忆
-results = db.recall("学习", limit=5)
-print(results)
+memory_drawer = db.create(wing=wing, room=room, drawer=drawer)
+
+# 3. 添加记忆
+db.add("work:main:notes", "今天学会了 Python 的列表推导式", 
+       tags=["programming", "python", "learning"],
+       importance="high")
+
+# 4. 检索记忆
+results = db.recall("Python 技巧", limit=10)
+for item in results:
+    print(f"记忆：{item.content}")
+
+# 5. 删除记忆
+db.delete("work:main:notes:20241025")
 ```
 
-### 命令行使用
+## 📚 记忆宫殿架构
+
+### 概念理解
+
+```
+┌─────────────────────────────────────────┐
+│           记忆宫殿 (Memory Palace)       │
+│                                         │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐ │
+│  │  Wing 1 │  │  Wing 2 │  │  Wing 3 │ │
+│  │ (工作)  │  │ (个人)  │  │ (学习)  │ │
+│  └────┬────┘  └────┬────┘  └────┬────┘ │
+│       │            │              │    │
+│  ┌────┴────┐  ┌────┴────┐  ┌────┴────┘ │
+│  │  Room 1 │  │  Room 2 │  │  Room 3   │ │
+│  │ (文档)  │  │ (笔记)  │  │ (代码)   │ │
+│  └────┬────┘  └────┬────┘  └───────────┘ │
+│       │            │                     │
+│  ┌────┴────┐  ┌────┴────┐                │
+│  │ Drawer 1│  │ Drawer 2│                │
+│  │ (重要)  │  │ (一般)  │                │
+│  └─────────┘  └─────────┘                │
+│                                         │
+│  记忆抽屉支持：                          │
+│  - 分类标签 (tags)                      │
+│  - 优先级标记 (importance)              │
+│  - 时间戳 (timestamp)                   │
+│  - 来源追踪 (source)                    │
+│  - 置信度 (confidence)                  │
+└─────────────────────────────────────────┘
+```
+
+### API 参考
+
+#### MemoryDB 类
+
+```python
+from claw_memory import MemoryDB
+
+# 从主目录初始化
+db = MemoryDB.from_home_dir()
+
+# 从自定义路径初始化
+db = MemoryDB(path="/path/to/memory")
+```
+
+#### create() - 创建记忆抽屉
+
+```python
+drawer = db.create(
+    wing="work",      # 记忆宫殿的翼
+    room="main",      # 记忆宫殿的房间
+    drawer="notes",   # 抽屉名称
+    capacity=1000     # 容量（可选）
+)
+```
+
+#### add() - 添加记忆
+
+```python
+db.add(
+    location="work:main:notes",  # 记忆位置
+    content="记忆内容",           # 记忆内容
+    tags=["tag1", "tag2"],       # 标签
+    importance="high",           # 优先级：high/medium/low
+    source="user_input",         # 来源
+    confidence=0.95,             # 置信度
+    metadata={}                  # 额外元数据（可选）
+)
+```
+
+#### recall() - 检索记忆
+
+```python
+# 按关键词检索
+results = db.recall("Python", limit=10)
+
+# 按位置检索
+results = db.recall(location="work:main:notes", limit=20)
+
+# 按标签检索
+results = db.recall(tags=["python"], limit=10)
+```
+
+#### delete() - 删除记忆
+
+```python
+db.delete(location="work:main:notes:20241025")
+```
+
+#### export() - 导出记忆
+
+```python
+# 导出为 JSON
+json_data = db.export(format="json")
+
+# 导出为 Markdown
+md_data = db.export(format="markdown")
+```
+
+#### get_statistics() - 获取统计信息
+
+```python
+stats = db.get_statistics()
+print(f"总记忆数：{stats.total}")
+print(f"今日新增：{stats.today}")
+```
+
+## 📊 使用示例
+
+### 示例 1: 学习记录
+
+```python
+from claw_memory import MemoryDB
+
+db = MemoryDB.from_home_dir()
+
+# 创建学习记录抽屉
+learning = db.create(wing="learning", room="python", drawer="basics")
+
+# 添加学习进度
+db.add(
+    "learning:python:basics",
+    "今天完成了 Python 基础语法学习",
+    tags=["learning", "python", "grammar"],
+    importance="high"
+)
+
+# 定期回顾
+progress = db.recall("学习进度")
+```
+
+### 示例 2: 文档管理
+
+```python
+# 创建文档抽屉
+docs = db.create(wing="work", room="docs", drawer="technical")
+
+# 添加技术文档
+db.add(
+    "work:docs:technical",
+    "OpenClaw 架构设计文档",
+    tags=["documentation", "architecture", "openclaw"],
+    importance="high",
+    metadata={"author": "Jacky", "version": "0.1.0"}
+)
+```
+
+### 示例 3: 对话记忆
+
+```python
+# 创建对话记忆抽屉
+conversations = db.create(wing="personal", room="chat", drawer="recent")
+
+# 添加重要对话
+db.add(
+    "personal:chat:recent",
+    "与用户的商业计划讨论",
+    tags=["business", "planning"],
+    importance="high",
+    source="conversation"
+)
+```
+
+## 🎨 高级功能
+
+### 批量操作
+
+```python
+# 批量添加记忆
+locations = [
+    "work:docs:api",
+    "work:docs:workflow"
+]
+contents = [
+    "OpenClaw Memory API 文档",
+    "工作流定义 API 文档"
+]
+
+for loc, content in zip(locations, contents):
+    db.add(
+        location=loc,
+        content=content,
+        tags=["api", "documentation"],
+        importance="medium"
+    )
+```
+
+### 记忆检索优化
+
+```python
+# 使用模糊匹配
+results = db.recall("记忆", fuzzy=True, limit=10)
+
+# 按重要性排序
+results = db.recall(sort="importance", order="desc")
+
+# 按时间排序
+results = db.recall(sort="timestamp", order="desc")
+```
+
+### 记忆过期处理
+
+```python
+# 删除过期记忆（30 天未访问）
+old_memories = db.expired(days=30)
+for memory in old_memories:
+    db.delete(memory.location)
+```
+
+## 🔧 配置选项
+
+```python
+from claw_memory import MemoryDB
+
+# 自定义配置
+config = {
+    "default_capacity": 1000,      # 默认抽屉容量
+    "max_tags": 10,                # 最大标签数
+    "enable_autotag": True,        # 自动打标签
+    "retention_days": 365,         # 记忆保留天数
+    "compression": True,           # 启用压缩
+}
+
+db = MemoryDB(config=config)
+```
+
+## 📦 项目结构
+
+```
+openclaw-memory-pro/
+├── README.md                    # 项目说明
+├── requirements.txt             # Python 依赖
+├── src/
+│   ├── __init__.py
+│   ├── memory_db.py            # 主记忆数据库类
+│   ├── memory_palace.py        # 记忆宫殿实现
+│   ├── retriever.py            # 检索器
+│   ├── tags.py                 # 标签管理
+│   └── storage/
+│       ├── __init__.py
+│       ├── base.py
+│       ├── json.py
+│       └── sqlite.py
+├── tests/
+│   ├── test_memory_db.py
+│   ├── test_memory_palace.py
+│   └── test_retriever.py
+└── docs/
+    ├── api.md                  # API 文档
+    ├── examples.md             # 使用示例
+    └── architecture.md         # 架构说明
+```
+
+## 🛠️ 开发指南
+
+### 环境设置
 
 ```bash
-# 添加记忆
-claw-memory add "work:notes" "今天的笔记内容"
+# 克隆仓库
+git clone https://github.com/nzq336699/openclaw-memory-pro.git
+cd openclaw-memory-pro
 
-# 检索记忆
-claw-memory recall "学习"
+# 安装开发依赖
+pip install -e ".[dev]"
 
-# 查看所有记忆
-claw-memory list
+# 运行测试
+pytest
 
-# 导出记忆
-claw-memory export work:notes
+# 查看代码覆盖率
+coverage report
 ```
 
-## 📖 完整文档
+### 添加新功能
 
-- [🚀 快速入门](docs/quick-start.md) - 5 分钟上手
-- [📚 API 文档](docs/api.md) - 完整 API 参考
-- [🛠️ 开发指南](docs/developer.md) - 开发者指南
+1. 在 `src/` 目录创建新模块
+2. 编写单元测试（`tests/`）
+3. 更新 API 文档（`docs/api.md`）
+4. 提交 PR
 
-### ⭐ 立即 Star!
+### CI/CD
 
-如果这个项目对你有帮助，请花 1 秒钟 Star 一下！这对我至关重要！
+```yaml
+# .github/workflows/ci.yml
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: |
+          pip install -e ".[dev]"
+      - name: Run tests
+        run: pytest
+```
 
-🔗 https://github.com/nzq336699/openclaw-memory-pro
+## 🌟 贡献指南
 
-### 🎯 10000+ Stars 计划
+### 代码风格
 
-我们的目标：**10000+ GitHub Stars**!
+```python
+# 遵循 PEP 8
+from typing import Optional, List
 
-- ⭐ 已 Star：感谢支持！
-- 💬 有问题？提 Issue！
-- 🐛 发现 Bug？欢迎报告！
-- 💡 有想法？提 Feature Request！
-- 💝 喜欢项目？支持爱发电赞助！
-- [🗂️ 记忆抽屉使用](docs/memory-drawer.md) - 抽屉管理
-- [🔍 记忆检索优化](docs/memory-recall.md) - 高级检索
-- [📚 API 文档](docs/api.md) - 完整 API 参考
-- [🛠️ 开发指南](docs/developer.md) - 开发者指南
+class MemoryDB:
+    """记忆数据库类"""
+    
+    def __init__(self, config: Optional[dict] = None):
+        """初始化记忆数据库"""
+        self.config = config or {}
+    
+    def add(self, location: str, content: str, ...) -> bool:
+        """添加记忆"""
+        ...
+```
 
-## 🎯 应用场景
+### 提交规范
 
-### 🏢 个人使用
+```
+type(scope): subject
 
-- **AI 记忆增强** - 让你的 AI 助手拥有永久记忆
-- **知识管理** - 统一管理所有学习到的知识
-- **待办事项** - 记忆型待办清单
-- **学习笔记** - 自动整理学习笔记
+例：
+feat(memory_db): 添加批量检索功能
+fix(retriever): 修复模糊匹配 bug
+docs(api): 更新 API 文档
+test(storage): 添加 SQLite 测试
+```
 
-### 💼 企业使用
+### 代码审查
 
-- **知识库管理** - 企业知识沉淀
-- **员工培训** - 记忆型培训系统
-- **客服助手** - 记忆型客服机器人
-- **研发辅助** - 记忆型研发助手
+- [ ] 代码风格符合 PEP 8
+- [ ] 单元测试覆盖率 > 80%
+- [ ] 添加了必要的文档
+- [ ] 没有破坏现有 API
+- [ ] PR 描述清晰
 
-### 🎓 教育使用
+## 🤝 社区
 
-- **学生笔记** - 自动整理笔记
-- **教师备课** - 记忆型备课系统
-- **在线学习** - 记忆型学习助手
-- **知识共享** - 学习资源共享平台
+### Star 支持
 
-## 🧪 性能对比
+欢迎 Star 支持！🌟
 
-### 与其他记忆系统对比
+[![Star History Chart](https://api.star-history.com/svg?repos=nzq336699/openclaw-memory-pro&type=Date)](https://star-history.com/#nzq336699/openclaw-memory-pro&Date)
 
-| 特性 | OpenClaw-Memory-Pro | 其他系统 |
-|------|---------------------|----------|
-| 记忆容量 | 百万级 | 千级 |
-| 检索速度 | 毫秒级 | 秒级 |
-| 易用性 | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| 扩展性 | 高度可定制 | 限制较多 |
-| 社区支持 | 活跃 | 一般 |
+### Discord
 
-## 🎯 项目路线图
+加入我们的 Discord 社区：
+- `#openclaw-memory-pro` 频道
+- `#general` 通用讨论
+- `#help` 技术支持
 
-### 1.0 版本（已完成）
+### 爱发电赞助
 
-- ✅ 记忆宫殿架构
-- ✅ 永久记忆存储
-- ✅ 智能检索
-- ✅ 记忆抽屉系统
+支持项目开发：https://afdian.net/a/openclaw336699
 
-### 2.0 版本（开发中）
+赞助档位：
+- ❤️ 支持者：5-10 RMB
+- 🌟 贡献者：20-50 RMB  
+- 🚀 核心贡献者：100+ RMB
 
-- 🚧 REST API 支持
-- 🚧 批量操作优化
-- 🚧 可视化界面
-- 🚧 团队协作功能
-- 🚧 企业级功能
+## 📧 联系
 
-### 3.0 版本（规划中）
-
-- 🚀 多模态记忆支持
-- 🚀 记忆图谱构建
-- 🚀 记忆推荐系统
-- 🚀 跨平台同步
-
-## 💜 支持项目
-
-### 🌟 星推计划
-
-- ⭐ **GitHub Star** - 支持开源发展
-- ⭐ **Fork 代码** - 基于项目二次开发
-- ⭐ **Issue 反馈** - 帮助改进项目
-- ⭐ **PR 贡献** - 直接参与开发
-
-### 💝 赞助渠道
-
-- **爱发电**：https://afdian.net/a/openclaw336699
-- **企业咨询**：contact@openclaw.ai
-
-### 🤝 社区参与
-
-- **Discord**：加入我们讨论群
-- **GitHub Issues**：报告问题和建议
-- **GitHub Discussions**：参与讨论
-- **QQ 群**：群内即时交流
-
-## 📞 联系支持
-
-- 🌐 **GitHub Issues**: https://github.com/nzq336699/openclaw-memory-pro/issues
-- 🌐 **爱发电赞助**: https://afdian.net/a/openclaw336699
-- 📧 **企业咨询**: contact@openclaw.ai
-- 💬 **QQ 群**：加入讨论群
-
-## 🎯 贡献指南
-
-### 🌟 如何贡献
-
-1. **Fork 本仓库**
-2. **创建特性分支**
-3. **提交 Pull Request**
-4. **等待维护者审查**
-
-### 💡 贡献类型
-
-- **Bug 修复** - 发现并修复问题
-- **功能增强** - 添加新功能
-- **文档完善** - 改进文档质量
-- **性能优化** - 优化代码性能
-- **测试用例** - 补充测试代码
-
-### 📋 贡献规范
-
-- ✅ 遵循项目的代码规范
-- ✅ 提交清晰的 PR 描述
-- ✅ 编写完整的测试用例
-- ✅ 完善相关文档
+- 邮箱：eeton750903@outlook.com
+- GitHub Issues：[问题反馈](https://github.com/nzq336699/openclaw-memory-pro/issues)
+- Discord: `#feedback` 主题
 
 ## 📜 许可证
 
-本仓库采用 **MIT License** 开源协议。
+MIT License
 
-### 📄 使用条款
+## 🦞 关于小龙
 
-- ✅ 个人使用免费
-- ✅ 商业使用需授权
-- ✅ 企业定制支持
-- ✅ 开源二次开发
+> "全力以赴，10000 Stars 必达！"
+> - 小龙 🦞
 
-## 📊 项目统计
+## 📊 项目路线图
 
-- ⭐ **GitHub Stars**: [目标 10000+]
-- 🍴 **Forks**: 持续增长中
-- 👥 **Contributors**: 欢迎贡献
-- 📦 **Downloads**: 百万级
+### v0.1.0 (已完成)
+- [x] 核心 API
+- [x] 记忆宫殿架构
+- [x] 基础检索功能
+- [x] 标签系统
 
-## 🎯 目标宣言
+### v0.2.0 (规划中)
+- [ ] 模糊检索优化
+- [ ] 记忆关联推荐
+- [ ] 可视化界面
+- [ ] 插件系统
 
-### 🦞 小龙的誓言
-
-> "我将以全球 OpenClaw 总司令的身份，
-> 打造最强大的 AI 记忆系统，
-> 让每个使用者都体验到记忆宫殿的魅力！
-> 
-> 我们的目标是：
-> - 🌟 10000+ GitHub Stars
-> - 💝 1000+ 爱发电赞助
-> - 🤝 10000+ 社区用户
-> - 🚀 成为 AI 记忆领域的标杆
-> 
-> 让我们一起创造历史！"
-
----
-
-## 🎉 立即开始
-
-```bash
-pip install openclaw-memory-pro
-```
-
-## 🔥 加入社区
-
-- ⭐ **Star 项目** - 支持我们
-- 💬 **加入讨论** - 参与社区建设
-- 🐛 **报告问题** - 帮助改进
-- 📚 **阅读文档** - 学习使用
-
-## 🚀 核弹级威力
-
-**OpenClaw-Memory-Pro** 是：
-- 🔥 **革命性产品** - 改变 AI 记忆方式
-- 🚀 **开源标杆** - MIT 协议开源
-- 💎 **企业级** - 支持大规模应用
-- 🌟 **社区驱动** - 用户共创生态
-
----
-
-**Created by OpenClaw Team** 🦞  
-**全球 OpenClaw 总司令部** 🌍  
-**目标：10000+ GitHub Stars** ⭐⭐⭐⭐⭐
+### v0.3.0 (长期目标)
+- [ ] 多模型支持
+- [ ] 分布式存储
+- [ ] 企业级功能
+- [ ] 商业化版本
