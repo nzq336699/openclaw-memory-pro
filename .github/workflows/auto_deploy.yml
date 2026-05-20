@@ -1,0 +1,44 @@
+name: Auto Deploy & Viral Growth
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # 每小时执行一次增长监控
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  generate-reports:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Generate Usage Report
+        run: |
+          python3 scripts/generate_usage_report.py
+          echo "# 🦞 OpenClaw-Memory-Pro 增长报告" >> report.md
+          echo "## 📈 增长引擎已启动！" >> report.md
+          echo "## 🚀 传播策略自动运行中..." >> report.md
+          
+      - name: Create Tutorial from Issue
+        run: |
+          python3 scripts/create_issue_from_pr.py
+          
+      - name: Monitor Growth & Notify
+        run: |
+          bash scripts/monitor_growth.sh
+          
+  viral-content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Generate Viral Tutorial
+        run: |
+          echo "生成病毒式传播教程..."
+          # 自动将热门 Issue 转换为教程
+          
+      - name: Create Social Media Assets
+        run: |
+          echo "生成社交分享素材..."

@@ -1,0 +1,67 @@
+# GitHub Labels for OpenClaw-Memory-Pro
+# 用于分类 Issue 和 PR
+
+labels:
+  # 优先级
+  - name: "priority-critical"
+    color: "dd3836"
+    description: "Critical issue needs immediate attention"
+    
+  - name: "priority-high"
+    color: "b60205"
+    description: "High priority issue"
+    
+  - name: "priority-medium"
+    color: "ea376c"
+    description: "Medium priority issue"
+    
+  - name: "priority-low"
+    color: "585d5f"
+    description: "Low priority issue"
+  
+  # 类型
+  - name: "bug"
+    color: "d73a4a"
+    description: "Something isn't working"
+    
+  - name: "enhancement"
+    color: "a2eeef"
+    description: "New feature or request"
+    
+  - name: "documentation"
+    color: "0075ca"
+    description: "Improvements to existing documentation"
+    
+  - name: "good first issue"
+    color: "7057ff"
+    description: "Good for newcomers"
+    
+  - name: "tutorial-needed"
+    color: "f00"
+    description: "Issue/PR 应转为教程"
+  
+  # 状态
+  - name: "wontfix"
+    color: "ffffff"
+    description: "This will not be worked on"
+    
+  - name: "help wanted"
+    color: "1d76f4"
+    description: "Extra attention is needed"
+    
+  - name: "question"
+    color: "cccccc"
+    description: "Further information is requested"
+  
+  # 病毒传播相关
+  - name: "viral-content"
+    color: "f9d604"
+    description: "内容适合病毒式传播"
+    
+  - name: "share-worthy"
+    color: "fbf425"
+    description: "值得分享到其他平台"
+  
+  - name: "tutorial-candidate"
+    color: "84b6f4"
+    description: "适合转为教程的热门 Issue"

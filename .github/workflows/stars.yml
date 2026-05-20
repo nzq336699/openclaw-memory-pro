@@ -1,0 +1,26 @@
+name: Star Counter & Growth Notification
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # 每 30 分钟检查一次
+  workflow_dispatch:
+  star:
+    types: [created]
+
+jobs:
+  count-stars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Count Stars
+        run: |
+          STAR_COUNT=$(curl -s https://api.github.com/repos/nzq336699/openclaw-memory-pro | jq '.stargazers_count')
+          echo "⭐ 当前 Star 数：$STAR_COUNT"
+          
+          if [ "$STAR_COUNT" -ge 1000 ]; then
+            echo "🚀 突破 1000 Star 临界点！GitHub 算法推荐即将启动！" >> GH_NOTIFICATION.md
+          elif [ "$STAR_COUNT" -ge 5000 ]; then
+            echo "🔥 接近 1 万星目标！病毒传播加速！" >> GH_NOTIFICATION.md
+          fi
+          
+          cat GH_NOTIFICATION.md

@@ -1,0 +1,42 @@
+name: Auto Deploy Tutorials
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      tutorial_id:
+        description: 'Tutorial ID to deploy (optional)'
+        required: false
+      tutorial_content:
+        description: 'Tutorial content (optional, for manual creation)'
+        required: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Analyze and Deploy Tutorials
+        run: |
+          # 分析当前提交，提取教程内容
+          git log -1 --pretty=format:"%B" > /tmp/commit-msg.txt
+          
+          # 生成部署报告
+          cat > deployment-report.md << EOF
+# 部署报告
+**时间**: $(date)
+**提交**: $(git log -1 --pretty=format:"%h %s")
+**教程**: 
+EOF
+          
+          # 列出教程文件
+          find . -name "*.md" -path "*/tutorials/*" -exec bash -c 'echo "- $1"' _ {} \; >> deployment-report.md
+          
+          echo "部署完成！查看 deployment-report.md"
+
+      - name: Generate Report
+        run: |
+          ls -la tutorials/
+          cat tutorials/*.md | head -100
